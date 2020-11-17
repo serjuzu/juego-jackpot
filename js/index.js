@@ -140,7 +140,7 @@ const jugar = () => {
         <td style="color:#154946;">4</td>
         <td>${contadorMonedas}</td>
         </tr>`) ;
-        divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganaste 4 monedas!';
+        divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganas 4!';
       },2500)
     } else if (cantidadFrutas.zanahoria == 3) {
       console.log("Ganaste 10 monedas");
@@ -153,7 +153,7 @@ const jugar = () => {
         <td style="color:#154946;">10</td>
         <td>${contadorMonedas}</td>
         </tr>`) ;
-        divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> ¡PLENO! Ganaste 10 monedas!'
+        divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> ¡PLENO! Ganas 10!'
       },2500)
     } else if (
       cantidadFrutas.aguacate == 3 ||
@@ -173,7 +173,7 @@ const jugar = () => {
         <td style="color:#154946;">3</td>
         <td>${contadorMonedas}</td>
     </tr>`) ;
-    divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganaste 3 monedas!'
+    divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganas 3!'
       },2500)
     } else if (
       (cantidadFrutas.aguacate == 2 ||
@@ -194,7 +194,7 @@ const jugar = () => {
         <td style="color:#154946;">3</td>
         <td>${contadorMonedas}</td>
     </tr>`) ;
-    divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganaste 3 monedas!'
+    divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganas 3!'
       },2500)
     } else if (
       cantidadFrutas.aguacate == 2 ||
@@ -204,7 +204,7 @@ const jugar = () => {
       cantidadFrutas.puerro == 2 ||
       cantidadFrutas.tomate == 2
     ) {
-      console.log("Ganaste 2 monedas");
+      console.log("Ganaste 2!");
       contadorMonedas+=2;
       setTimeout(()=>{
         contador.innerHTML = `<h3>${contadorMonedas}</h3>`;
@@ -214,7 +214,7 @@ const jugar = () => {
         <td style="color:#154946;">2</td>
         <td>${contadorMonedas}</td>
     </tr>`) ;
-    divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganaste 2 monedas!'
+    divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganas 2!'
       },2500)
     } else if (cantidadFrutas.zanahoria == 1) {
       console.log("Ganaste 1 moneda");
@@ -227,7 +227,7 @@ const jugar = () => {
         <td style="color:#154946;">1</td>
         <td>${contadorMonedas}</td>
     </tr>`) ;
-    divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganaste 1 moneda!'
+    divPremios.innerHTML = '<img src="img/pila-de-monedas.png" alt="premio"> Ganas 1!'
       },2500)
     }else{
       setTimeout(()=>{
