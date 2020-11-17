@@ -247,6 +247,7 @@ const jugar = () => {
       btnMonedas.disabled=false;
       contadorTiradas=0;
       alert("Te has gastado todas las monedas");
+      btnSalir.disabled=true;
     }
    },2800)
     
@@ -269,6 +270,7 @@ function salir (){
       alert(`Fin del juego. Empezaste con ${monedasInicial} monedas y ahora tienes ${contadorMonedas}`)
       contadorMonedas=0;
       contador.innerHTML=`<h3>${contadorMonedas}</h3>`;
+      btnSalir.disabled=true;
 }
 // Eventos
 //Tirada al hacer clic
