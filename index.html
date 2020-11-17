@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Jackpot</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div class="container">
+        </br></br>
+
+        <div class="row justify-content-center pb-5">
+            <h1>Jackpot Vegano</h1>
+        </div>
+        <div class="row my-5 d-flex justify-content-between">
+            <div class="btn-group" role="group" aria-label="Botonera">
+                <button type="button" class="btn btn-warning" id="moneda">Moneda</button>
+                <button type="button" class="btn btn-danger" id="salir">Salir</button>
+            </div>
+            <div id="premio"></div>
+            <div id="contador"></div>
+        </div>
+        <div class="row" style="height: 295px;">
+            <div class="col-4">
+                <div id="fruta1" class="" role="status">
+                    <!-- hueco fruta1 -->
+                </div>
+            </div>
+            <div class="col-4">
+                <div id="fruta2" class="" role="status">
+                    <!-- hueco fruta2 -->
+                </div>
+            </div>
+            <div class="col-4">
+                <div id="fruta3" class="" role="status">
+                    <!-- hueco fruta3 -->
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row justify-content-center py-5"><button id="btnJugar" type="button"
+                class="btn btn-outline-success">Apuesta una moneda</button></div>
+    </div>
+    <div class="row justify-content-center oculto" id="divTabla">
+        <div class="col-9 shadow-lg p-3 mb-5 rounded">
+            <table class="table table-primary text-center">
+                <thead>
+                    <tr>
+                        <th>Tirada</th>
+                        <th>Monedas gastadas</th>
+                        <th>Monedas ganadas</th>
+                        <th>Saldo</th>
+                    </tr>
+                </thead>
+                <tbody id="resultados-jugadas">
+                   
+        
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
