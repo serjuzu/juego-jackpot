@@ -21,6 +21,8 @@ body {
   background-color: #154946;
   font-family: 'Press Start 2P', cursive;
 }
+
+
 /* Animación del título */
 @keyframes titulo {
     0%   {text-shadow: .2em -.3em .5em #F9DC5C;}
@@ -52,4 +54,9 @@ h1 {
 #premio{
     color: #f4fffd;
     text-shadow: .2em -.2em .3em #F9DC5C;
+}
+
+#fruta1, #fruta2, #fruta3 {
+  max-width: 100%;
+  max-height: 100%;
 }

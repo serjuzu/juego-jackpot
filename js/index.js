@@ -97,7 +97,7 @@ const jugar = () => {
     setTimeout(() => {
       // Timeout para que se pinten en una secuencia, no todas a la vez
       const imgFruta1 = document.createElement("img");
-      imgFruta1.id = "fruta";
+      imgFruta1.id = "fruta1";
       imgFruta1.src = `img/${fruta1}.png`;
       imgFruta1.classList.add("slot-fruta");
       divFruta1.append(imgFruta1);
@@ -105,6 +105,7 @@ const jugar = () => {
 
     setTimeout(() => {
       const imgFruta2 = document.createElement("img");
+      imgFruta2.id = "fruta2";
       imgFruta2.src = `img/${fruta2}.png`;
       imgFruta2.classList.add("slot-fruta");
       divFruta2.append(imgFruta2);
@@ -112,6 +113,7 @@ const jugar = () => {
 
     setTimeout(() => {
       const imgFruta3 = document.createElement("img");
+      imgFruta3.id = "fruta3";
       imgFruta3.src = `img/${fruta3}.png`;
       imgFruta3.classList.add("slot-fruta");
       divFruta3.append(imgFruta3);
