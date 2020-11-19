@@ -1,87 +1,131 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Jackpot</title>
-
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vegan tragaperras!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div class="container">
-        </br></br>
+    <div class="container has-text-centered block pt-6">
+        <h1>Jackpot Vegano</h1>
 
-        <div class="row justify-content-center pb-5">
-            <div class="col text-center">
-                <h1>Jackpot Vegano</h1>
-            </div> 
-        </div>
-        <div class="row my-5 text-center">
+    </div>
 
-            <div class="col">
-                <div class="btn-group" role="group" aria-label="Botonera">
-                    <button type="button" class="btn btn-warning" id="moneda">Moneda</button>
-                    <button type="button" class="btn btn-danger" id="salir">Salir</button>
-                </div>
+    <nav class="level">
+        <div class="level-item has-text-centered">
+            <div class="field is-grouped">
+                <p class="control">
+                    <button class="button is-warning is-small" id="moneda">
+                        <span class="icon is-small">
+                            <i class="fas fa-euro-sign"></i>
+                        </span>
+                      <span>Moneda</span>  
+                    </button>
+                </p>
+
+                <p class="control">
+                    <button class="button is-danger is-small" id="salir">
+                        Salir
+                    </button>
+                </p>
+
+                <p class="control">
+                    <button class="button is-info is-small" id="btnInfo">
+                        <span class="icon">
+                            <i class="fas fa-question-circle"></i>
+                        </span>  
+                    </button>
+                </p>
+
             </div>
+        </div>
+        <div class="level-item has-text-centered">
             <div class="col">
                 <div id="premio" style="width: 20em; height: 3em;"></div>
             </div>
-            <div class="col">
-                <div id="contador"></div>
-            </div>
-
-            
-            
-            
         </div>
-        <div class="row" style="height: 295px;">
-            <div class="col-4">
-                <div id="fruta1" class="" role="status">
-                    <!-- hueco fruta1 -->
-                </div>
+        <div class="level-item has-text-centered">
+            <div id="contador"></div>
+        </div>
+    </nav>
+    <nav class="level is-justify-content-center">
+        <div class="columns is-mobile is-justify-content-space-between pt-5 is-1 is-vcentered" style="height: 295px;">
+            <div class="column has-text-centered is-one-third">
+                <div id="fruta1" class="" role="status"></div>
             </div>
-            <div class="col-4">
-                <div id="fruta2" class="" role="status">
-                    <!-- hueco fruta2 -->
-                </div>
+            <div class="column has-text-centered is-one-third">
+                <div id="fruta2" class="" role="status"></div>
             </div>
-            <div class="col-4">
+            <div class="column has-text-centered is-one-third">
                 <div id="fruta3" class="" role="status">
-                    <!-- hueco fruta3 -->
                 </div>
+            </div>
+    </nav>
+
+
+
+    <div class="container has-text-centered block">
+        <button id="btnJugar" type="button" class="mt-4 button is-rounded is-success is-outlined">Apuesta una moneda
+        </button>
+    </div>
+
+    <section class="section">
+        <div class="columns is-centered">
+            <div class="column is-narrow oculto" id="divTabla">
+                <!-- <table class="table"> -->
+
+
+
+                <!-- <div class="oculto is-justify-content-center container" id="divTabla"> -->
+
+                <table class="table is-narrow has-text-centered has-background-grey-lighter">
+                    <thead>
+                        <tr>
+                            <th>Tirada</th>
+                            <th>Gastadas</th>
+                            <th>Ganadas</th>
+                            <th>Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultados-jugadas">
+
+
+                    </tbody>
+                </table>
+
             </div>
 
         </div>
+    </section>
 
 
-        <div class="row justify-content-center py-5"><button id="btnJugar" type="button"
-                class="btn btn-outline-success">Apuesta una moneda</button></div>
+    <div class="modal" id="info">
+  <div class="modal-background"></div>
+  <div class="modal-content has-background-info-light p-6">
+      <ul>
+          <li>Si sale una zanahoria, se gana <strong>una</strong> moneda.</li>
+          <li>Si salen dos zanahorias, se ganan <strong>cuatro</strong> monedas.</li>
+          <li>Si salen tres zanahorias, se ganan <strong>diez</strong> monedas.</li>
+          <li>Si salen dos hortalizas iguales que no sean zanahorias, se ganan <strong>dos</strong> monedas.</li>
+          <li>Si salen tres hortalizas iguales que no sean zanahorias, se ganan <strong>cinco</strong> monedas.</li>
+          <li>Si sale una zanahoria y dos hortalizas iguales, se ganan <strong>tres</strong> monedas.</li>
+      </ul>
+      <hr>
+      <p>Introduce el número de monedas que desees para empezar. No podrás volver a introducir monedas durante la partida.</p>
+      <p>En la parte inferior podrás ver un resumen de las tiradas que hayas efectuado.</p>
     </div>
-    <div class="row justify-content-center oculto" id="divTabla">
-        <div class="col-9 shadow-lg p-3 mb-5 rounded">
-            <table class="table table-primary text-center">
-                <thead>
-                    <tr>
-                        <th>Tirada</th>
-                        <th>Monedas gastadas</th>
-                        <th>Monedas ganadas</th>
-                        <th>Saldo</th>
-                    </tr>
-                </thead>
-                <tbody id="resultados-jugadas">
-                   
-        
-                </tbody>
-            </table>
-        </div>
-    </div>
-    
+  <button class="modal-close is-large" aria-label="cerrar" id="cerrar-info"></button>
+</div>
+
+
 
     <script src="js/index.js"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 </body>
 
 </html>
