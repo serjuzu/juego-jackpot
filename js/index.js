@@ -71,7 +71,7 @@ const vaciarFrutas = ()=>{
 
 //Función para realizar una jugada
 const jugar = () => {
-  monedasInicial = contadorMonedas;
+  monedasInicial += contadorMonedas;
   btnSalir.disabled = false;
   btnMonedas.disabled = true;
   btnJugar.disabled = true;
