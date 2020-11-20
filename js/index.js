@@ -56,6 +56,7 @@ btnSalir.disabled = true;
 //Función para insertar moneda
 const insertarMoneda = () => {
   contadorMonedas++;
+  monedasInicial++;
   contador.innerHTML = `<h3>${contadorMonedas}</h3>`;
   btnJugar.disabled = false;
   filasResultados.innerHTML = "";
@@ -71,8 +72,6 @@ const vaciarFrutas = ()=>{
 
 //Función para realizar una jugada
 const jugar = () => {
-  monedasInicial = 0;
-  monedasInicial += contadorMonedas;
   btnSalir.disabled = false;
   btnMonedas.disabled = true;
   btnJugar.disabled = true;
@@ -282,7 +281,8 @@ const jugar = () => {
       btnJugar.disabled = true;
       btnMonedas.disabled = false;
       contadorTiradas = 0;
-      alert("Te has gastado todas las monedas");
+      monedasInicial = 0;
+      alert("Te has gastado todas las monedas.");
       btnSalir.disabled = true;
     }
   }, 2800);
@@ -305,9 +305,10 @@ function salir() {
   contadorTiradas = 0;
   divPremios.innerHTML = "";
   alert(
-    `Fin del juego. Empezaste con ${monedasInicial} monedas y ahora tienes ${contadorMonedas}`
+    `Fin del juego. Empezaste con ${monedasInicial} monedas y ahora tienes ${contadorMonedas}.`
   );
   contadorMonedas = 0;
+  monedasInicial = 0;
   contador.innerHTML = `<h3>${contadorMonedas}</h3>`;
   vaciarFrutas();
   btnSalir.disabled = true;
