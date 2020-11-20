@@ -47,10 +47,7 @@ const filasResultados = document.querySelector("#resultados-jugadas");
 const divPremios = document.querySelector("#premio");
 const btnSalir = document.querySelector("#salir");
 const modalInfo = document.querySelector("#info");
-const cierreInfo = document.querySelector("#cerrar-info");
-// const audioClic = document.getElementById("clic");
-const audioMoneda = document.querySelector("#moneda");
-
+const cierreInfo = document.querySelector("#cerrar-info")
 
 contador.innerHTML = `<h3>${contadorMonedas}</h3>`;
 btnJugar.disabled = true;
@@ -63,7 +60,6 @@ const insertarMoneda = () => {
   btnJugar.disabled = false;
   filasResultados.innerHTML = "";
   divTabla.classList.add("oculto");
-  // sonarMoneda();
 };
 
 const vaciarFrutas = ()=>{
@@ -75,7 +71,6 @@ const vaciarFrutas = ()=>{
 
 //Función para realizar una jugada
 const jugar = () => {
-  monedasInicial = 0;s
   monedasInicial += contadorMonedas;
   btnSalir.disabled = false;
   btnMonedas.disabled = true;
@@ -326,9 +321,6 @@ function cerrarInfo(){
   modalInfo.classList.remove("is-active")
 }
 
-function sonarMoneda(){
-  audioMoneda.play();
-}
 // Eventos. Listeners para los botones.
 btnJugar.addEventListener("click", jugar);
 btnMonedas.addEventListener("click", insertarMoneda);
