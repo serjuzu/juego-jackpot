@@ -61,6 +61,8 @@ const insertarMoneda = () => {
   btnJugar.disabled = false;
   filasResultados.innerHTML = "";
   divTabla.classList.add("oculto");
+  var a = new Audio('sounds/moneda.wav'); 
+      a.play();
 };
 
 const vaciarFrutas = ()=>{
@@ -72,6 +74,8 @@ const vaciarFrutas = ()=>{
 
 //Función para realizar una jugada
 const jugar = () => {
+  var a = new Audio('sounds/start.wav'); 
+      a.play();
   btnSalir.disabled = false;
   btnMonedas.disabled = true;
   btnJugar.disabled = true;
@@ -108,6 +112,8 @@ const jugar = () => {
     imgFruta1.src = `img/${fruta1}.png`;
     imgFruta1.classList.add("slot-fruta");
     divFruta1.append(imgFruta1);
+    var a = new Audio('sounds/fruta.wav'); 
+      a.play();
   }, 700);
 
   setTimeout(() => {
@@ -116,6 +122,8 @@ const jugar = () => {
     imgFruta2.src = `img/${fruta2}.png`;
     imgFruta2.classList.add("slot-fruta");
     divFruta2.append(imgFruta2);
+    var a = new Audio('sounds/fruta.wav'); 
+      a.play();
   }, 1400);
 
   setTimeout(() => {
@@ -125,6 +133,8 @@ const jugar = () => {
     imgFruta3.classList.add("slot-fruta");
     divFruta3.append(imgFruta3);
     btnJugar.disabled = false;
+    var a = new Audio('sounds/fruta.wav'); 
+      a.play();
   }, 2100);
 
   //Contar frutas diferentes. Me devuelve un objeto literal {fruta:cantidad}
@@ -152,6 +162,8 @@ const jugar = () => {
       );
       divPremios.innerHTML =
         '<img src="img/pila-de-monedas.png" alt="premio"> ¡Enhorabuena! Has ganado 4 ';
+        var a = new Audio('sounds/premio.wav'); 
+      a.play();
     }, 2500);
   } else if (cantidadFrutas.zanahoria == 3) {
     console.log("¡¡PLENO!! Has ganado 10 monedas");
@@ -169,6 +181,8 @@ const jugar = () => {
       );
       divPremios.innerHTML =
         '<img src="img/pila-de-monedas.png" alt="premio"> ¡¡PLENO!! Has ganado 10 ';
+      var a = new Audio('sounds/premio.wav'); 
+      a.play();
     }, 2500);
   } else if (
     cantidadFrutas.aguacate == 3 ||
@@ -193,6 +207,8 @@ const jugar = () => {
       );
       divPremios.innerHTML =
         '<img src="img/pila-de-monedas.png" alt="premio"> ¡No está mal! Ganas 3';
+        var a = new Audio('sounds/premio.wav'); 
+      a.play();
     }, 2500);
   } else if (
     (cantidadFrutas.aguacate == 2 ||
@@ -218,6 +234,8 @@ const jugar = () => {
       );
       divPremios.innerHTML =
         '<img src="img/pila-de-monedas.png" alt="premio"> ¡No está mal! Ganas 3';
+        var a = new Audio('sounds/premio.wav'); 
+        a.play(); 
     }, 2500);
   } else if (
     cantidadFrutas.aguacate == 2 ||
@@ -322,6 +340,36 @@ function abrirInfo(){
 function cerrarInfo(){
   modalInfo.classList.remove("is-active")
 }
+
+/* Funciones del audio */
+
+// --- ubicacion de los archivos 
+const dir = 'audios/';
+// --- arreglo global de audios
+let audios = [];
+
+// --- esta función debe invocarse desde el evento Load del body preferiblemente
+precargarSonidos( 3, inicializar() );
+
+function inicializar(){
+  console.log('Los archivos se han cargado!');
+}
+
+function precargarSonidos(n, fncOK){
+  var cargados = 0;
+  for(var i=0;i<n;i++){
+    var audio = new Audio(dir+(i+1)+'.wav'); 
+      audio.addEventListener('canplaythrough',function(){
+        cargados++;
+        if( cargados >= n){
+          fncOK ? fncOK() : null;
+        }
+      });
+    audios[i]=audio;
+  }
+}
+
+
 
 // Eventos. Listeners para los botones.
 btnJugar.addEventListener("click", jugar);
