@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vegan tragaperras!</title>
+ <!-- Importación de Bulma CSS para facilitar in Layout responsive -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -14,8 +15,9 @@
         <h1>Jackpot Vegano</h1>
 
     </div>
-
+<!-- Bloque con botonera, contador de monedas y hueco donde aparecerán los premios -->
     <nav class="level">
+        <!-- Botonera -->
         <div class="level-item has-text-centered">
             <div class="field is-grouped">
                 <p class="control">
@@ -43,15 +45,19 @@
 
             </div>
         </div>
+        <!-- Premios -->
         <div class="level-item has-text-centered">
             <div class="col">
                 <div id="premio" style="width: 20em; height: 3em;"></div>
             </div>
         </div>
+        <!-- Contador de monedas -->
         <div class="level-item has-text-centered">
             <div id="contador"></div>
         </div>
     </nav>
+
+    <!--Bloque con Slots contenedores de las frutas -->
     <nav class="level is-justify-content-center">
         <div class="columns is-mobile is-justify-content-space-between pt-5 is-1 is-vcentered" style="height: 295px;">
             <div class="column has-text-centered is-one-third">
@@ -66,13 +72,12 @@
             </div>
     </nav>
 
-
-
+<!-- Botón de jugar -->
     <div class="container has-text-centered block">
         <button id="btnJugar" type="button" class="mt-4 button is-rounded is-success is-outlined">Apuesta una moneda
         </button>
     </div>
-
+<!-- Tabla resumen de jugadas -->
     <section class="section">
         <div class="columns is-centered">
             <div class="column is-narrow oculto" id="divTabla">
